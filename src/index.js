@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import home from './componentes/pages/home';
+import cadastroVideo from './componentes/pages/cadastro/video'
+import erro404 from './componentes/pages/erro404'
+
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" component={home} exact/>
+      <Route path="/cadastro/video" component={cadastroVideo}/>
+      <Route component={erro404}/>
+    </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA

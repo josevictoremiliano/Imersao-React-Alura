@@ -1,19 +1,22 @@
-import React from 'react'
-import Logo from '../../assets/img/logo.png'
-import './Menu.css'
-import ButtonLink from '../componentes/ButtonLink'
+import React from 'react';
+import Logo from '../../assets/img/logo.png';
+import {Link} from 'react-router-dom'
+import './Menu.css';
+import Button from '../Button';
+// import ButtonLink from './components/ButtonLink';
 
-function Menu(){
-    return(
-        <nav className='Menu'>
-            <a href='/'>
-                <img className='Logo' src={Logo} alt='Logo JVTUBE'/>
-            </a>
+function Menu() {
+  return (
+    <nav className="Menu">
+      <Link to="/">
+        <img className="Logo" src={Logo} alt="JVTUBE logo" />
+      </Link>
 
-            <ButtonLink className='ButtonLink' href='/'>
-                Carregar Novo Vídeo
-            </ButtonLink>
-        </nav>
-    )
+      <Button as={Link} className="ButtonLink" to="/cadastro/video">
+        Novo vídeo
+      </Button>
+    </nav>
+  );
 }
-export default Menu
+
+export default Menu;
